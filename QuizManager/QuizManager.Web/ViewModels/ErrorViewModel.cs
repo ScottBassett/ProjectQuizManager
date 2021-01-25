@@ -1,6 +1,4 @@
-using System;
-
-namespace QuizManager.Web.Models
+﻿namespace QuizManager.Web.ViewModels
 {
     public class ErrorViewModel
     {

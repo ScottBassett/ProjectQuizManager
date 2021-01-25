@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QuizManager.DataAccess.Models.Quiz>
+@inject SignInManager<IdentityUser> signInManager;
+
+@{
+    ViewData["Title"] = "Quizzes";
+}
+
+<h1>Quizzes</h1>
+
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <p>
+        <a class="btn btn-outline-primary" asp-action="Create">Create New Quiz</a>
+    </p>
+}
+
+<table class="table">
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuizName)
+            </td>
+
+            <td>
+                <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">View Questions</a>
+            </td>
+
+            @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            {
+                <td>
+                    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            }
+        </tr>
+    }
+    </tbody>
+</table>
