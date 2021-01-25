@@ -1,0 +1,28 @@
+﻿@model IEnumerable<QuizManager.DataAccess.Models.Answer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Answers</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AnswerName)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnswerName)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

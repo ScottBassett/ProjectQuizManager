@@ -1,0 +1,37 @@
+﻿@model List<QuizManager.DataAccess.Models.Quiz>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Questions</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Quiz
+            </th>
+            <th>
+                Question
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var quiz in Model)
+        {
+            @foreach (var question in quiz.Questions)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => quiz.QuizName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => question.QuestionName)
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

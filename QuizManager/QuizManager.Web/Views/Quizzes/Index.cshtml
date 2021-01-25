@@ -7,7 +7,7 @@
 
 <h1>Quizzes</h1>
 
-@if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Edit"))
 {
     <p>
         <a class="btn btn-outline-primary" asp-action="Create">Create New Quiz</a>
@@ -27,7 +27,7 @@
                 <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id">View Questions</a>
             </td>
 
-            @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            @if (signInManager.IsSignedIn(User) && User.IsInRole("Edit"))
             {
                 <td>
                     <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>

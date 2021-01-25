@@ -18,11 +18,11 @@
                     @Html.DisplayFor(modelItem => question.QuestionName)
 
                 </td>
-                @if (signInManager.IsSignedIn(User))
+                @if (signInManager.IsSignedIn(User) && User.IsInRole("View"))
                 {
                     <td>
                         <a class="btn btn-primary" asp-controller="Questions" asp-action="Details" asp-route-id="@question.Id">View Answers</a>
-                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Edit"))
                         {
                             <a class="btn btn-secondary" asp-controller="Questions" asp-action="Edit" asp-route-id="@question.Id">Edit</a>
                             <a class="btn btn-danger" asp-controller="Questions" asp-action="Delete" asp-route-id="@question.Id">Delete</a>
@@ -35,7 +35,7 @@
 </div>
 
 <div>
-    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Edit"))
     {
         <a class="btn btn-outline-primary" asp-controller="Questions" asp-action="Create">Add Question</a>
     }

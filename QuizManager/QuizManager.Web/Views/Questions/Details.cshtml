@@ -1,0 +1,42 @@
+﻿@model QuestionDetailsViewModel
+@inject SignInManager<IdentityUser> signInManager;
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h1>@Html.DisplayFor(model => model.Question.QuestionName)</h1>
+    <br />
+
+    <dl class="row">
+        <dt class="col-sm-2">Possible Answers</dt>
+    </dl>
+
+    <table class="table">
+
+        @foreach (var answer in Model.Answers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => answer.AnswerName)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-2">Correct Answer</dt>
+    </dl>
+    <p>@Html.DisplayFor(model => model.Answers.FirstOrDefault(x => x.IsCorrect).AnswerName)</p>
+</div>
+
+
+<div>
+    @if (signInManager.IsSignedIn(User) && User.IsInRole("Edit"))
+    {
+        <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@Model.Question.Id">Edit</a>
+    }
+    <a class="btn btn-outline-secondary" asp-controller="Quizzes" asp-action="Details" asp-route-id="@Model.Question.QuizId">Back to Questions</a>
+</div>
