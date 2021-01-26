@@ -1,0 +1,3 @@
+INSERT INTO public."AspNetRoles" ("Id", "Name", "NormalizedName", "ConcurrencyStamp") VALUES ('9f8da620-ddba-4f30-a406-19f300200a0b', 'Edit', 'EDIT', '9c2534cd-2cc2-4b27-aa6d-8e5c317c2d2a');
+INSERT INTO public."AspNetRoles" ("Id", "Name", "NormalizedName", "ConcurrencyStamp") VALUES ('1b9b616a-71a5-45e6-815c-affa45554ab4', 'View', 'VIEW', '5b13c50e-6b05-4259-a398-ba397a7d01c0');
+INSERT INTO public."AspNetRoles" ("Id", "Name", "NormalizedName", "ConcurrencyStamp") VALUES ('ada41906-2170-4382-96b5-5150f9c784ac', 'Restricted', 'RESTRICTED', '3764292d-ea65-42aa-bebc-7c3137a05fe5');
