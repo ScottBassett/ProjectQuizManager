@@ -20,12 +20,17 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Quizzes" asp-action="Index">Quizzes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Questions" asp-action="Index">All Questions</a>
-                        </li>
+
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Restricted"))
+                        {
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Quizzes" asp-action="Index">Quizzes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Questions" asp-action="Index">All Questions</a>
+                            </li>
+                        }
 
                         @if (signInManager.IsSignedIn(User) && User.IsInRole("Edit"))
                         {
