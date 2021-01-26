@@ -4,7 +4,7 @@ INSERT INTO public."AspNetUsers" ("Id", "UserName", "NormalizedUserName", "Email
 INSERT INTO public."AspNetUsers" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount") VALUES ('03f57249-ffee-463d-8d9f-f6a36ae4ebad', 'userWithView@quiz.com', 'USERWITHVIEW@QUIZ.COM', 'userWithView@quiz.com', 'USERWITHVIEW@QUIZ.COM', false, 'AQAAAAEAACcQAAAAEBf3V14stsWBLlcJIvuCR3BZ7t1a2TA5YPZfnDW5gs1jk4btHFrMR6oSpegpeJ5ghA==', 'H4RGLKFM5GTJNRBOEDIGMKJBZ7II3WXZ', '124d87e1-17f4-4588-9a51-00409db3e5c1', null, false, false, null, true, 0);
 INSERT INTO public."AspNetUsers" ("Id", "UserName", "NormalizedUserName", "Email", "NormalizedEmail", "EmailConfirmed", "PasswordHash", "SecurityStamp", "ConcurrencyStamp", "PhoneNumber", "PhoneNumberConfirmed", "TwoFactorEnabled", "LockoutEnd", "LockoutEnabled", "AccessFailedCount") VALUES ('15993389-e472-4ab0-8518-b4b7585f71f5', 'admin@quiz.com', 'ADMIN@QUIZ.COM', 'admin@quiz.com', 'ADMIN@QUIZ.COM', false, 'AQAAAAEAACcQAAAAEJ697ePAxCHDmx4e7IKlKe2FDYtA6t+5cQL4BFZwahDwpLC38IpvtvXecO955T8j9g==', 'OKDNG6UFNFV3OI7DNA5LZISJ7TY7EO57', '182f39b6-791a-4b2f-b6df-83f41a4e222a', null, false, false, null, true, 0);
 
--- Populate ROLES
+-- Populate Roles
 
 INSERT INTO public."AspNetRoles" ("Id", "Name", "NormalizedName", "ConcurrencyStamp") VALUES ('9f8da620-ddba-4f30-a406-19f300200a0b', 'Edit', 'EDIT', '9c2534cd-2cc2-4b27-aa6d-8e5c317c2d2a');
 INSERT INTO public."AspNetRoles" ("Id", "Name", "NormalizedName", "ConcurrencyStamp") VALUES ('1b9b616a-71a5-45e6-815c-affa45554ab4', 'View', 'VIEW', '5b13c50e-6b05-4259-a398-ba397a7d01c0');
@@ -22,20 +22,41 @@ INSERT INTO public."AspNetUserRoles" ("UserId", "RoleId") VALUES ('15993389-e472
 -- Populate Quizzes
 
 INSERT INTO public."Quizzes" ("Id", "QuizName") VALUES (100, 'General Knowledge');
+INSERT INTO public."Quizzes" ("Id", "QuizName") VALUES (200, 'Sport');
+INSERT INTO public."Quizzes" ("Id", "QuizName") VALUES (300, 'Music');
 
 -- Populate Questions
 
 INSERT INTO public."Questions" ("Id", "QuizId", "QuestionName") VALUES (100, 100, 'What is the capital of Wales?');
 INSERT INTO public."Questions" ("Id", "QuizId", "QuestionName") VALUES (200, 100, 'What is the largest country in the world?');
-
+INSERT INTO public."Questions" ("Id", "QuizId", "QuestionName") VALUES (300, 200, 'Who won the English Premier League in the 2018-19 season?');
+INSERT INTO public."Questions" ("Id", "QuizId", "QuestionName") VALUES (400, 200, 'Won who the last cricket world cup?');
+INSERT INTO public."Questions" ("Id", "QuizId", "QuestionName") VALUES (500, 300, 'In which year did Little Mix win The X Factor?');
+INSERT INTO public."Questions" ("Id", "QuizId", "QuestionName") VALUES (600, 300, 'What was Frank Sinatra’s middle name?');
 
 -- Populate Answers
 
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (100, 'Swansea', 100, false);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (200, 'Cardiff', 100, true);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (300, 'Cheltenham', 100, false);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (400, 'Newport', 100, false);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (500, 'USA', 200, false);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (600, 'China', 200, false);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (700, 'Russia', 200, true);
-INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (800, 'Canada', 200, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (100, 'A. Swansea', 100, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (200, 'B. Cardiff', 100, true);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (300, 'C. Cheltenham', 100, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (400, 'D. Newport', 100, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (500, 'A. USA', 200, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (600, 'B. China', 200, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (700, 'C. Russia', 200, true);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (800, 'D. Canada', 200, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (900, 'A. Manchester City', 300, true);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1000, 'B. Liverpool', 300, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1100, 'C. Chelsea', 300, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1200, 'D. Manchester United', 300, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1300, 'A. Pakistan', 400, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1400, 'B. West Indies', 400, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1500, 'C. Australia', 400, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1600, 'D. England', 400, true);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1700, 'A. 2010', 500, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1800, 'B. 2011', 500, true);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (1900, 'C. 2012', 500, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (2000, 'D. 2013', 500, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (2100, 'A. Albert', 600, true);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (2200, 'B. Frank', 600, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (2300, 'C. Desmond', 600, false);
+INSERT INTO public."Answers" ("Id", "AnswerName", "QuestionId", "IsCorrect") VALUES (2400, 'D. Charles', 600, false);
