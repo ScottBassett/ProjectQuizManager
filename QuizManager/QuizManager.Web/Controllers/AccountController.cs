@@ -43,7 +43,7 @@ namespace QuizManager.Web.Controllers
                     }
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return View("ThankYouForRegistering");
                 }
 
                 foreach (var error in result.Errors)

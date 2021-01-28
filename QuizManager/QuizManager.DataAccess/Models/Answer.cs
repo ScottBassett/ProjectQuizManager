@@ -8,6 +8,7 @@ namespace QuizManager.DataAccess.Models
         public int Id { get; set; }
 
         [Display(Name = "Answer")]
+        [Required]
         public string AnswerName { get; set; }
 
         public int QuestionId { get; set; }
