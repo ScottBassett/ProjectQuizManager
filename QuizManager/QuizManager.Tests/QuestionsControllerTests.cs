@@ -11,7 +11,7 @@ namespace QuizManager.Tests
 {
     public class QuestionsControllerTests
     {
-        
+
         [Fact]
         public async void CreateQuestionTest()
         {
@@ -26,7 +26,7 @@ namespace QuizManager.Tests
 
             var testQuizName = "Test Quiz";
 
-            var testQuiz = new Quiz
+            var testQuizForQuestionTest = new Quiz
             {
                 Id = 2,
                 QuizName = testQuizName
@@ -35,7 +35,7 @@ namespace QuizManager.Tests
             var mockTempData = new Mock<ITempDataDictionary>();
             quizzesController.TempData = mockTempData.Object;
 
-            await quizzesController.Create(testQuiz);
+            await quizzesController.Create(testQuizForQuestionTest);
 
             var questionsController = new QuestionsController(context);
 
@@ -44,7 +44,7 @@ namespace QuizManager.Tests
             var testQuestion = new Question
             {
                 Id = 1,
-                QuizId = testQuiz.Id,
+                QuizId = testQuizForQuestionTest.Id,
                 QuestionName = testQuestionName
             };
 

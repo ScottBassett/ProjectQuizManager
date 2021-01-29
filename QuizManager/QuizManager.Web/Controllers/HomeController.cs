@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using QuizManager.Web.ViewModels;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
@@ -9,11 +8,6 @@ namespace QuizManager.Web.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-
-        public HomeController()
-        {
-        }
-
         public IActionResult Index()
         {
             return View();

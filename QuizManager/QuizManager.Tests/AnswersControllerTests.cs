@@ -44,7 +44,7 @@ namespace QuizManager.Tests
 
             var testQuestion = new Question
             {
-                Id = 2,
+                Id = 200,
                 QuizId = testQuiz.Id,
                 QuestionName = testQuestionName
             };
@@ -63,7 +63,7 @@ namespace QuizManager.Tests
 
             var testCreateAnswersViewModel = new CreateAnswersViewModel
             {
-                
+
                 QuestionId = testQuestion.Id,
                 Answers = new List<Answer>()
             };
